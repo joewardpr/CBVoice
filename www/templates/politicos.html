@@ -1,0 +1,14 @@
+<ion-view view-title="Elected Reps" hide-back-button="true" >
+  <ion-content class="padding">
+
+    <div class="card">
+      <div class="item item-text-wrap">
+        <div ng-show="authData">Logged in as: <strong>{{authData.facebook.displayName}}</strong></div>
+      </div>
+    </div>
+
+    <a class="button button-full icon-left ion-social-facebook button-assertive"
+       ng-click='logout()'><strong>Logout</strong></a>
+
+  </ion-content>
+</ion-view>

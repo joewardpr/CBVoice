@@ -1,13 +1,10 @@
-<ion-view view-title="Login">
+<ion-view view-title="Login" hide-back-button="true">
   <ion-content class="padding">
 
 
     <div style="width: 100%; margin: 0 auto;">
       <img src="img/logo-cbvoice.png" style="width: 70%; display: block; margin: 0 auto">
     </div>
-
-
-
 
     <div class="card">
       <div class="item item-text-wrap">
@@ -17,7 +14,16 @@
       </div>
     </div>
 
+    <!--
+    <div class="card">
+      <div class="item item-text-wrap">
+        <div ng-show="authData">{{authData.facebook.displayName}}</div>
+      </div>
+    </div>
+    -->
 
-    <button class="button button-full icon-left ion-social-facebook button-positive"><strong>Login to Facebook</strong></button>
+
+    <a class="button button-full icon-left ion-social-facebook button-positive"
+       ng-click='login()' onclick='console.log("testing")'><strong>Login to Facebook</strong></a>
   </ion-content>
 </ion-view>
