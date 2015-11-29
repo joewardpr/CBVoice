@@ -15,12 +15,27 @@ app.controller('PoliticoCtrl',
   $scope.sendFeedback = function() {
     console.log("Saving message into database for moderation.")
 
-    $scope.feedback.$add({
-      msg: $scope.feedbackMsg,
-      approved: 'false'
-    });
+    if ($scope.feedbackMsg) {
 
-    $scope.submitted = true
+      $scope.submitError = false
+      $scope.feedbackMsg = '' // Reset
+
+      $scope.feedback.$add({
+        msg: $scope.feedbackMsg,
+        approved: 'false'
+      });
+
+      $scope.submitted = true
+
+
+    }
+    else {
+      $scope.submitted = false
+      console.log("No message entered.")
+      $scope.submitError = true
+    }
+
+
 
   }
 

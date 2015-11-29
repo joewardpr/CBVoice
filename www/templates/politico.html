@@ -23,7 +23,11 @@
            ng-click='sendFeedback()'><strong>Send Feedback</strong></a>
 
         <button class="button icon-left ion-checkmark-circled button-full button-outline button-balanced" ng-show="submitted">
-          <strong>Your message was submitted</strong>
+          <strong>Your feedback was submitted</strong>
+        </button>
+
+        <button class="button icon-left ion-checkmark-circled button-full button-outline button-assertive" ng-show="submitError">
+          <strong>Don't forget the feedback!</strong>
         </button>
 
       </div>
