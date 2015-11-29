@@ -20,6 +20,8 @@ app.controller('PoliticoCtrl',
       approved: 'false'
     });
 
+    $scope.submitted = true
+
   }
 
 })
