@@ -1,4 +1,4 @@
-app.controller('LoginCtrl', function($scope, $stateParams, $state, Auth, $location) {
+app.controller('LoginCtrl', function($scope, $stateParams, $state, Auth, $location, FURL) {
 
   $scope.login = function() {
     Auth.$authWithOAuthRedirect("facebook").then(function(authData) {
@@ -18,10 +18,9 @@ app.controller('LoginCtrl', function($scope, $stateParams, $state, Auth, $locati
   };
 
   $scope.logout = function() {
-    console.log("Trying to log out.")
-    var ref = new Firebase("https://cbvoice.firebaseio.com/users");
-    ref.unauth();
-    //$location.path('login');
+    console.log("Logging out.")
+    var ref = new Firebase(FURL)
+    ref.unauth()
   }
 
   Auth.$onAuth(function(authData) {

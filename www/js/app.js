@@ -7,6 +7,8 @@
 // 'starter.controllers' is found in controllers.js
 var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'firebase'])
 
+.constant('FURL', 'https://cbvoice.firebaseio.com/')
+
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -40,8 +42,8 @@ var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.se
 
 })
 
-.factory("Auth", function($firebaseAuth) {
-  var usersRef = new Firebase("https//cbvoice.firebaseio.com/users");
+.factory("Auth", function($firebaseAuth, FURL) {
+  var usersRef = new Firebase(FURL + "users");
   return $firebaseAuth(usersRef);
 })
 
