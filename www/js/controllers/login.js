@@ -27,12 +27,19 @@ app.controller('LoginCtrl', function($scope, $stateParams, $state, Auth, $locati
   Auth.$onAuth(function(authData) {
     if (authData === null) {
       console.log("Not logged in yet");
+
+      $scope.loggedIn = false
       $state.go('login')
-    } else {
+    }
+    else {
       console.log("Logged in as", authData.uid);
+
+      $scope.loggedIn = true
       $state.go('list');
     }
+
     $scope.authData = authData; // This will display the user's name in our view
+
   });
 
 })

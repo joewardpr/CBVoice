@@ -1,9 +1,9 @@
-<ion-view view-title="Elected Reps" hide-back-button="true" >
-  <ion-content class="padding" ng-controller="PoliticosCtrl">
+<ion-view view-title="Reps" hide-back-button="true" >
+  <ion-content class="padding green" ng-controller="PoliticosCtrl">
 
     <ion-list ng-repeat="(id,rep) in politicos">
 
-      <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" href="/politico/{{id}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" href="#/politico/{{id}}">
         <img ng-src="{{rep.avatar_url}}">
         <strong>{{rep.name}}</strong>, {{rep.title}}
         <p>{{rep.org}}</p>
@@ -15,13 +15,6 @@
 
   </ion-content>
 
-
 </ion-view>
 
 
-<div class="tabs tabs-icon-left">
-  <a class="tab-item" ng-click='logout()'>
-    <i class="icon ion-log-out"></i>
-    Logout
-  </a>
-</div>

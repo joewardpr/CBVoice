@@ -4,7 +4,6 @@ app.controller('PoliticosCtrl', function($scope, $stateParams, $state, Auth, $lo
   ref = new Firebase(FURL);
   $scope.politicos = $firebaseObject(ref.child('politicos'));
 
-
 })
 
 

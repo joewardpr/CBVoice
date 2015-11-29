@@ -40,6 +40,11 @@ var app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.se
     controller: 'LoginCtrl'
   })
 
+  $stateProvider.state('politico', {
+    url: "/politico/:userId",
+    templateUrl: "templates/politico.html",
+  });
+
 })
 
 .factory("Auth", function($firebaseAuth, FURL) {
