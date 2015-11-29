@@ -1,13 +1,12 @@
 <ion-view view-title="Elected Reps" hide-back-button="true" >
-  <ion-content class="padding">
+  <ion-content class="padding" ng-controller="PoliticosCtrl">
 
+    <ion-list ng-repeat="(id,rep) in politicos">
 
-    <ion-list>
-
-      <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
-        <img ng-src="https://pbs.twimg.com/profile_images/623286900221198336/xv9PL-26_400x400.jpg">
-        <strong>Joe Ward</strong>, Founder
-        <p>SocialResponseApp.com</p>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" href="/politico/{{id}}">
+        <img ng-src="{{rep.avatar_url}}">
+        <strong>{{rep.name}}</strong>, {{rep.title}}
+        <p>{{rep.org}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
 
       </ion-item>
