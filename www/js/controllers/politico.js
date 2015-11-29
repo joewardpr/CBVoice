@@ -18,12 +18,14 @@ app.controller('PoliticoCtrl',
     if ($scope.feedbackMsg) {
 
       $scope.submitError = false
-      $scope.feedbackMsg = '' // Reset
 
       $scope.feedback.$add({
         msg: $scope.feedbackMsg,
-        approved: 'false'
+        approved: 'false',
+        forPoliticoID: userId
       });
+
+      $scope.feedbackMsg = '' // Reset
 
       $scope.submitted = true
 
