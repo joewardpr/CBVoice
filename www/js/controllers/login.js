@@ -1,5 +1,7 @@
 app.controller('LoginCtrl', function($scope, $stateParams, $state, Auth, $location, FURL) {
 
+  $scope.ref = new Firebase(FURL)
+
   $scope.login = function() {
     Auth.$authWithOAuthRedirect("facebook").then(function(authData) {
       // User successfully logged in
@@ -19,7 +21,6 @@ app.controller('LoginCtrl', function($scope, $stateParams, $state, Auth, $locati
 
   $scope.logout = function() {
     console.log("Logging out.")
-    var ref = new Firebase(FURL)
     ref.unauth()
   }
 
