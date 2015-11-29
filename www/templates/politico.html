@@ -1,4 +1,4 @@
-<ion-view view-title="Contact" align-title="right" hide-back-button="false">
+  <ion-view view-title="Contact" align-title="right" hide-back-button="false">
   <ion-content class="padding green" ng-controller="PoliticoCtrl">
 
     <img src="">
@@ -17,17 +17,17 @@
         <label class="item item-input item-stacked-label">
           <input type="hidden" ng-
           <span class="input-label">Feedback or Questions</span>
-          <textarea ng-model='feedbackMsg' placeholder="Share your thoughts" style="padding: 15px; background-color: #f7f3f7;" rows="7">{{feedbackMsg}}</textarea>
+          <textarea id="textbox" ng-model='feedbackMsg' placeholder="Share your thoughts" style="padding: 15px; background-color: #f7f3f7;" rows="7">{{feedbackMsg}}</textarea>
         </label>
 
         <a class="button button-full icon-left ion-social-facebook button-positive"
            ng-click='sendFeedback()'><strong>Send Feedback</strong></a>
 
-        <button class="button icon-left ion-checkmark-circled button-full button-outline button-balanced" ng-show="submitted">
+        <button class="button icon-left ion-checkmark-circled button-full button-outline button-balanced animated tada" ng-show="submitted" ng-style='pageloaded'>
           <strong>Your feedback was submitted</strong>
         </button>
 
-        <button class="button icon-left ion-alert button-full button-outline button-assertive" ng-show="submitError">
+        <button class="button icon-left ion-alert button-full button-outline button-assertive animated infinite pulse" ng-show="submitError" ng-style='pageloaded'>
           <strong>Don't forget the feedback!</strong>
         </button>
 

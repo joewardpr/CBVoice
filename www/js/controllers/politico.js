@@ -1,11 +1,12 @@
 app.controller('PoliticoCtrl',
-  function($scope, $stateParams, $state, Auth, $location, FURL, $firebaseArray, $firebaseObject ) {
+  function($scope, $stateParams, $state, Auth, $location, FURL, $firebaseArray, $firebaseObject, $templateCache ) {
+
+  $scope.pageloaded = "{'display : none'}";
 
   // Bind Firebase list of elected officials to the list
   $scope.ref = new Firebase(FURL)
   $scope.msgRef = new Firebase(FURL + "/feedback")
   $scope.feedback = $firebaseArray($scope.msgRef)
-
 
   userId = $stateParams.userId
   $scope.politico = $firebaseObject($scope.ref.child('politicos/' + userId))
@@ -28,7 +29,6 @@ app.controller('PoliticoCtrl',
       $scope.feedbackMsg = '' // Reset
 
       $scope.submitted = true
-
 
     }
     else {
